@@ -541,11 +541,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	    }
 
-	    console.log(day.format(), day.format('d'), day.date(), parseInt(day.format('d')), parseInt(day.format('d')) in excludeDays);
+	    var dayOfWeek = parseInt(day.format('d'));
 
 	    disabled = day.isBefore(minDate) || day.isAfter(maxDate) || some(excludeDates, function (xDay) {
 	      return day.sameDay(xDay);
-	    }) || parseInt(day.format('d')) in excludeDays;
+	    }) || excludeDays.indexOf(dayOfWeek) > -1;
 
 	    return React.createElement(Day, {
 	      key: key,
