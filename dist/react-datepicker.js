@@ -530,6 +530,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var minDate = new DateUtil(this.props.minDate).safeClone(),
 	        maxDate = new DateUtil(this.props.maxDate).safeClone(),
 	        excludeDates,
+	        excludeDays,
 	        disabled;
 
 	    excludeDays = this.props.excludeDays || [];
