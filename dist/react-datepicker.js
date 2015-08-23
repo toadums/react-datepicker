@@ -543,7 +543,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    disabled = day.isBefore(minDate) || day.isAfter(maxDate) || some(excludeDates, function (xDay) {
 	      return day.sameDay(xDay);
-	    }) || day.day() in excludeDays;
+	    }) || parseInt(day.format('d')) in excludeDays;
 
 	    return React.createElement(Day, {
 	      key: key,
