@@ -97,7 +97,7 @@ var Calendar = React.createClass( {
       } );
     }
 
-    console.log(day.format(), day.format('d'), day.date(), parseInt(day.format('d')),(parseInt(day.format('d')) in excludeDays));
+    console.log(day.format(), day.format('d'), day.day(), parseInt(day.format('d')),(parseInt(day.format('d')) in excludeDays));
 
     disabled = day.isBefore( minDate ) || day.isAfter( maxDate ) ||
       some( excludeDates, function( xDay ) { return day.sameDay( xDay ); } ) ||
