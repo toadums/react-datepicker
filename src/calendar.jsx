@@ -88,6 +88,8 @@ var Calendar = React.createClass( {
         excludeDates,
         disabled;
 
+    excludeDays = this.props.excludeDays || [];
+
     if ( this.props.excludeDates && Array.isArray( this.props.excludeDates ) ) {
       excludeDates = map( this.props.excludeDates, function( date ) {
         return new DateUtil( date ).safeClone();
@@ -95,7 +97,8 @@ var Calendar = React.createClass( {
     }
 
     disabled = day.isBefore( minDate ) || day.isAfter( maxDate ) ||
-      some( excludeDates, function( xDay ) { return day.sameDay( xDay ); } );
+      some( excludeDates, function( xDay ) { return day.sameDay( xDay ); } ) ||
+      day.day() in excludeDays;
 
     return (
       <Day

@@ -189,6 +189,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          minDate: this.props.minDate,
 	          maxDate: this.props.maxDate,
 	          excludeDates: this.props.excludeDates,
+	          excludeDays: this.props.excludeDays,
 	          weekStart: this.props.weekStart })
 	      );
 	    }
@@ -531,6 +532,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        excludeDates,
 	        disabled;
 
+	    excludeDays = this.props.excludeDays || [];
+
 	    if (this.props.excludeDates && Array.isArray(this.props.excludeDates)) {
 	      excludeDates = map(this.props.excludeDates, function (date) {
 	        return new DateUtil(date).safeClone();
@@ -539,7 +542,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    disabled = day.isBefore(minDate) || day.isAfter(maxDate) || some(excludeDates, function (xDay) {
 	      return day.sameDay(xDay);
-	    });
+	    }) || day.day() in excludeDays;
 
 	    return React.createElement(Day, {
 	      key: key,
