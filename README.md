@@ -1,12 +1,5 @@
 # React Date Picker
-[![Bower version](https://badge.fury.io/bo/react-date-picker.svg)](http://badge.fury.io/bo/react-date-picker)
-[![Build Status](https://travis-ci.org/Hacker0x01/react-datepicker.svg?branch=master)](https://travis-ci.org/Hacker0x01/react-datepicker)
-[![devDependency Status](https://david-dm.org/Hacker0x01/react-datepicker/dev-status.svg)](https://david-dm.org/Hacker0x01/react-datepicker#info=devDependencies)
-[![Downloads](http://img.shields.io/npm/dm/react-datepicker.svg)](https://npmjs.org/package/react-datepicker)
-
-A simple and reusable datepicker component for React ([Demo](https://hacker0x01.github.io/react-datepicker/))
-
-![](https://cloud.githubusercontent.com/assets/1412392/5339491/c40de124-7ee1-11e4-9f07-9276e2545f27.png)
+This fork was created so that we could include `excludedDays` - which lets us make certain days of the week non-selectable. For example, we only do Costco deliveries on Monday, so we exclude all days except mondays for Costco.
 
 ## Configuration
 
@@ -18,31 +11,6 @@ A simple and reusable datepicker component for React ([Demo](https://hacker0x01.
 - Set custom locale settings for locale: `locale: "cs"`
 - Set date format for callendar: `dateFormatCalendar: "YYYY/MM/DD"`
 - Set custom weekdays (for locale days): `weekdays: ['Ne', 'Po', 'Út', 'St', 'Čt', 'Pá', 'So']`
-
-## Installation
-
-Installing is really simple and can be done in multiple ways:
-
-- Install with Bower: `bower install react-date-picker`
-- Install with npm: `npm install react-datepicker --save`
-- Install with Bundler: `bundle install rails-assets-react-date-picker`
-
-## Local Development
-
-- Install Bower `npm install -g bower`
-- Install Bower Packages `bower install`
-- Install packages `npm install`
-- Run `grunt watch` in order to watch for local changes and run tests/build the code.
-- Start a static webserver `python -m SimpleHTTPServer`
-- And visit `localhost:8000/example` to see the example.
-
-You can also test server side rendering:
-
-- `$ node example/node-rendering.js`
-
-You should see the HTML returned.
-
-To run tests, simply run `npm test`.
 
 ## License
 
